@@ -3,3 +3,5 @@ This is a Java program that allows users to interact with the various methods of
 
 How to use the project:
 Ensure that all the program files are downloaded and in the same folder of the program (Folder name is 2620DataStructures). The program folder should have dataProject.java (The main program file to access the data structures), and the 5 data structure method files (LinkedLists, Stack, Queue, MinHeap and Binary Search Tree (BST)). To run the program, go to dataProject.java and run the file.
+
+Created by Mel Meneses in May 2024.
