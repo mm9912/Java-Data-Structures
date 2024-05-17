@@ -37,6 +37,7 @@ public class LinkedListOption {
         if (current != null && current.data == key) {
             // Update the head to skip the first node
             head = current.next;
+            System.out.println("The value has successfully been deleted! Input option 3 to view new Linked List.");
             return;
         }
         // Search for the node with the key to be deleted
@@ -46,9 +47,11 @@ public class LinkedListOption {
         }
         // If the key was not found in the list
         if (current == null) {
+            System.out.println("The value you searched for is not on the Linked List.");
             return;
         }
         // Unlink the node with the key to be deleted
+        System.out.println("The value has successfully been deleted! Input option 3 to view new Linked List.");
         prev.next = current.next;
     }
 
@@ -56,7 +59,7 @@ public class LinkedListOption {
     public void traverse () {
 Node current = head;
 while (current != null) {
-    System.out.println(current.data + "\nV");
+    System.out.println("V\n" + current.data);
     current = current.next;
 }
 System.out.println();
@@ -89,7 +92,6 @@ public void handleLinkedListOperations(Scanner scan) {
                 System.out.println("Enter the value/key you'd like to delete.");
                 int inputD = scan.nextInt();
                 deleteNodeByKey(inputD);
-                System.out.println("The value has successfully been deleted! Input option 3 to view new Linked List.");
                 try {
                     Thread.sleep(1000);
                   } catch (InterruptedException e) {
