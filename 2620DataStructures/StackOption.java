@@ -30,6 +30,11 @@ public class StackOption {
         }
         else {
             System.out.println("Pop not possible. Not enough elements to be popped (removed). Please insert values first.");
+		try {
+				Thread.sleep(1000);
+			  } catch (InterruptedException e) {
+				Thread.currentThread().interrupt();
+			  }
             return -1;
         }
     }
@@ -41,6 +46,11 @@ public class StackOption {
         }
         else {
             System.out.println("No top value detected. Your array may be empty. Please insert values first.");
+		try {
+				Thread.sleep(1000);
+			  } catch (InterruptedException e) {
+				Thread.currentThread().interrupt();
+			  }
             return -1;
         }
     }
