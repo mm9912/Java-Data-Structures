@@ -45,7 +45,13 @@ public class MinHeapOption {
     //ExtractMin method
     public int extractMin() {
         if (root == null) {
-            throw new IllegalStateException("Heap is empty");
+            System.out.println("Heap is empty. Returning -1 due to empty heap. Please insert elements first.");
+            try {
+                Thread.sleep(1000);
+              } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+              }
+            return -1;
         }
         int minValue = findMinValue(root);
         root = deleteRecursive(root, minValue);
@@ -97,11 +103,6 @@ public class MinHeapOption {
 
     private int findSmallestValue(Node root) {
         return root.left == null ? root.value : findSmallestValue(root.left);
-    }
-
-    //Public method to call private method of deleting values.
-    public void delete(int value) {
-        root = deleteRecursive(root, value);
     }
 
     //Class that handles Queue BST data structures.
