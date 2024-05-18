@@ -39,20 +39,6 @@ public class QueueOption {
         return front == null;
     }
 
-    //Method to display queue
-    public void display () {
-        if (empty()) {
-            System.out.println("The queue is empty.");
-        }
-        System.out.println("Queue: ");
-        Node current = front;
-        while (current != null) {
-            System.out.println(current.item + " ");
-            current = current.next;
-        }
-        System.out.println();
-    }
-
     //Declare linked list structure
     private class Node {
         Object item;
