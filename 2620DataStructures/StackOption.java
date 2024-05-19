@@ -29,7 +29,7 @@ public class StackOption {
             return stackArray[top--];
         }
         else {
-            System.out.println("Pop not possible. Not enough elements to be popped (removed). Please insert values first.");
+            System.out.println("Pop not possible. Returning -1. Not enough elements to be popped (removed). Please insert values first.");
 		try {
 				Thread.sleep(1000);
 			  } catch (InterruptedException e) {
@@ -45,7 +45,7 @@ public class StackOption {
             return stackArray[top];
         }
         else {
-            System.out.println("No top value detected. Your array may be empty. Please insert values first.");
+            System.out.println("No top value detected. Returning -1. Your array may be empty. Please insert values first.");
 		try {
 				Thread.sleep(1000);
 			  } catch (InterruptedException e) {
