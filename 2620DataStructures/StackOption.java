@@ -1,19 +1,20 @@
-//Import scanner for switch case
+//Import scanner for switch case.
 import java.util.Scanner;
 
 public class StackOption {
+	//Declare stack components.
     public int maximum;
     public int [] stackArray;
     public int top;
 
-    //Declare an array structure for Stack
+    //Declare an array structure for Stack.
     public StackOption (int size) {
         maximum = size;
         stackArray = new int[maximum];
         top = -1;
     }
 
-    //Method to insert data into the array utilizng push method
+    //Method to insert data into the array utilizng push method.
     public void push (int number) {
         if (top < maximum - 1) {
             stackArray[++top] = number;
@@ -23,14 +24,14 @@ public class StackOption {
         }
     }
 
-    //Method to delete a value/element from the array
+    //Method to delete a value/element from the array.
     public int pop () {
         if (top >= 0 ) {
             return stackArray[top--];
         }
         else {
             System.out.println("Pop not possible. Returning -1. Not enough elements to be popped (removed). Please insert values first.");
-		try {
+			try {
 				Thread.sleep(1000);
 			  } catch (InterruptedException e) {
 				Thread.currentThread().interrupt();
@@ -39,14 +40,14 @@ public class StackOption {
         }
     }
 
-    //Method to return the most top value
+    //Method to return the most top value.
     public int top () {
         if (top >= 0) {
             return stackArray[top];
         }
         else {
             System.out.println("No top value detected. Returning -1. Your array may be empty. Please insert values first.");
-		try {
+			try {
 				Thread.sleep(1000);
 			  } catch (InterruptedException e) {
 				Thread.currentThread().interrupt();
@@ -55,7 +56,8 @@ public class StackOption {
         }
     }
 
-    //Class that handles LinkedLists data structures.
+    //Method that handles user requests for Stack data structures.
+	//Menu called from main class to let user interact with data structure.
 		public void handleStackOperations(Scanner scan) {
 			while (true) {
 				System.out.println("What do you want to do with the Stack?");
