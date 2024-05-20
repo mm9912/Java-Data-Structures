@@ -1,13 +1,13 @@
-//Import scanner for switch case
+//Import scanner for switch case.
 import java.util.Scanner;
 
 class Node {
-    //Binary tree implementation
+    //Binary tree implementation.
     int value;
     Node left;
     Node right;
 
-    //Keep track of int values and child references
+    //Keep track of int values and child references.
     Node(int value) {
         this.value = value;
         right = null;
@@ -16,7 +16,7 @@ class Node {
 }
 
 public class MinHeapOption {
-    //Declare node of the tree
+    //Declare node of the tree.
     Node root;
 
     //Method to insert elements into tree.
@@ -30,7 +30,7 @@ public class MinHeapOption {
         } else if (value > current.value) {
             current.right = addRecursive(current.right, value);
         } else {
-            // value already exists
+            //Value already exists.
             return current;
         }
     
@@ -42,7 +42,7 @@ public class MinHeapOption {
         root = addRecursive(root, value);
     }
 
-    //ExtractMin method
+    //Method to extract minimum number from BST.
     public int extractMin() {
         if (root == null) {
             System.out.println("Heap is empty. Returning -1 due to empty heap. Please insert elements first.");
@@ -58,6 +58,7 @@ public class MinHeapOption {
         return minValue;
     }
 
+    //Method to find minimum value.
     private int findMinValue(Node root) {
         int minValue = root.value;
         while (root.left != null) {
@@ -67,25 +68,25 @@ public class MinHeapOption {
         return minValue;
     }
 
-    //Method to deletes elements from the tree
+    //Method to deletes elements from the tree.
     private Node deleteRecursive(Node current, int value) {
         if (current == null) {
             return null;
         }
 
         if (value == current.value) {
-            // Node to delete found
+            //Node to delete found.
             if (current.left == null && current.right == null) {
-                // Case 1: Node has no children
+                //Case 1: Node has no children.
                 return null;
             } else if (current.right == null) {
-                // Case 2: Node has one child (left child)
+                //Case 2: Node has one child (left child).
                 return current.left;
             } else if (current.left == null) {
-                // Case 2: Node has one child (right child)
+                //Case 2: Node has one child (right child).
                 return current.right;
             } else {
-                // Case 3: Node has two children
+                //Case 3: Node has two children.
                 int smallestValue = findSmallestValue(current.right);
                 current.value = smallestValue;
                 current.right = deleteRecursive(current.right, smallestValue);
@@ -101,11 +102,13 @@ public class MinHeapOption {
         return current;
     }
 
+    //Method to find smallest value for deletion.
     private int findSmallestValue(Node root) {
         return root.left == null ? root.value : findSmallestValue(root.left);
     }
 
-    //Class that handles Queue BST data structures.
+    //Method that handles user requests for MinHeap BST data structures.
+    //Menu called from main class to let user interact with data structure.
 		public void handleMinHeapOperations(Scanner scan) {
 			while (true) {
 				System.out.println("What do you want to do with the Min Heap?");
@@ -113,8 +116,8 @@ public class MinHeapOption {
 				int option = scan.nextInt();
 	
 				switch (option) {
-					//Case where a user can insert values into the queue.
-					//User is prompted to enter values into queue until -1 is entered.
+					//Case where a user can insert values into the BST for MinHeap.
+					//User is prompted to enter values into BST until -1 is entered.
 					case 1:
 					System.out.println("Enter a number to insert into the BST. Input -1 to finish inputting data.");
 						int input = 0;
