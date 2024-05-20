@@ -30,7 +30,7 @@ public class dataProject {
 			//Stack option
 			case 2:
 			//Declare stack list array, inputs and display options
-			StackOption slist = new StackOption(9);
+			StackOption slist = new StackOption(10);
 			System.out.println("You have selected Stack.\nThis operation is done using LIFO (Last-in, First-out).\nYour array has 10 spots.");
 			try {
 				Thread.sleep(1000);
@@ -68,7 +68,7 @@ public class dataProject {
 
 			//BST option
 			case 5:
-			//Declare binary tree, inputs and display options
+			//Declare binary search tree, inputs and display options
 			BSTOption tree = new BSTOption();
 			System.out.println("You have selected Binary Search Tree.");
 			try {
