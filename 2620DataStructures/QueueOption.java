@@ -1,15 +1,17 @@
-//Import scanner for switch case
+//Import scanner for switch case.
 import java.util.Scanner;
 
 public class QueueOption {
+	//Declare node components
     private Node front, back;
 
+	//Setup queue.
     public QueueOption () {
         front = null;
         back = null;
     }
 
-    //Method to add items into the queue
+    //Method to add items into the queue.
     public void enqueue(Object item) {
         Node newNode = new Node(item);
         if (front == null) {
@@ -21,7 +23,7 @@ public class QueueOption {
         back = newNode;
     }
 
-    //Method to remove items from the queue
+    //Method to remove items from the queue.
     public Object dequeue () {
         Object toReturn = null; 
         if (front != null) {
@@ -34,12 +36,12 @@ public class QueueOption {
         return toReturn;
     }
 
-    //Method in case where queue is empty
+    //Method in case where queue is empty.
     public boolean empty () {
         return front == null;
     }
 
-    //Declare linked list structure
+    //Declare linked list structure.
     private class Node {
         Object item;
         Node next;
@@ -50,7 +52,8 @@ public class QueueOption {
         }
     }
 
-    //Class that handles Queue BST data structures.
+    //Method that handles user requests for Queue BST data structures.
+	//Menu called from main class to let user interact with data structure.
 		public void handleQueueOperations(Scanner scan) {
 			while (true) {
 				System.out.println("What do you want to do with the Queue?");
