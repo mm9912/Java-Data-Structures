@@ -1,13 +1,13 @@
-//Import scanner for switch case
+//Import scanner for switch case.
 import java.util.Scanner;
 
 class Node {
-    //Binary tree implementation
+    //Binary tree implementation.
     int value;
     Node left;
     Node right;
 
-    //Keep track of int values and child references
+    //Keep track of int values and child references.
     Node(int value) {
         this.value = value;
         right = null;
@@ -16,7 +16,7 @@ class Node {
 }
 
 public class BSTOption {
-    //Declare node of the tree
+    //Declare node of the tree.
     Node root;
 
     //Method to insert elements into tree.
@@ -30,7 +30,7 @@ public class BSTOption {
         } else if (value > current.value) {
             current.right = addRecursive(current.right, value);
         } else {
-            // value already exists
+            //Value already exists.
             return current;
         }
     
@@ -42,25 +42,25 @@ public class BSTOption {
         root = addRecursive(root, value);
     }
 
-    //Method to deletes elements from the tree
+    //Method to deletes elements from the tree.
     private Node deleteRecursive(Node current, int value) {
         if (current == null) {
             return null;
         }
 
         if (value == current.value) {
-            // Node to delete found
+            //Node to delete found.
             if (current.left == null && current.right == null) {
-                // Case 1: Node has no children
+                //Case 1: Node has no children.
                 return null;
             } else if (current.right == null) {
-                // Case 2: Node has one child (left child)
+                //Case 2: Node has one child (left child).
                 return current.left;
             } else if (current.left == null) {
-                // Case 2: Node has one child (right child)
+                //Case 2: Node has one child (right child).
                 return current.right;
             } else {
-                // Case 3: Node has two children
+                //Case 3: Node has two children.
                 int smallestValue = findSmallestValue(current.right);
                 current.value = smallestValue;
                 current.right = deleteRecursive(current.right, smallestValue);
@@ -76,6 +76,7 @@ public class BSTOption {
         return current;
     }
 
+    //Method to find smallest value in tree.
     private int findSmallestValue(Node root) {
         return root.left == null ? root.value : findSmallestValue(root.left);
     }
@@ -98,12 +99,12 @@ public class BSTOption {
           : containsNodeRecursive(current.right, value);
     }
 
-    //Public method to call the private method of tree searching,
+    //Public method to call the private method of tree searching.
     public boolean containsNode(int value) {
         return containsNodeRecursive(root, value);
     }
 
-    //Method to display binary tree.
+    //Method to display binary search tree.
 public void traverseInOrder(Node node) {
     if (node != null) {
         traverseInOrder(node.left);
@@ -111,7 +112,9 @@ public void traverseInOrder(Node node) {
         traverseInOrder(node.right);
     }
 }
-    //Class that handles LinkedLists data structures.
+
+    //Method that handles user requests for Binary Search Tree data structures.
+    //Menu called from main class to let user interact with data structure.
 		public void handleBSTOperations(Scanner scan) {
 			while (true) {
 				System.out.println("What do you want to do with the Binary Search Tree (BST)?");
@@ -120,7 +123,7 @@ public void traverseInOrder(Node node) {
 	
 				switch (option) {
 					//Case where user insert's keys (numbers) into the tree.
-					//Prompts user to enter values into the tree.
+					//Prompts user to enter values into the tree until they insert -1.
 					case 1:
 					System.out.println("Enter a number to insert into the BST. Input -1 to finish inputting data.");
 						int input = 0;
@@ -145,7 +148,7 @@ public void traverseInOrder(Node node) {
 					}
 					break;
 
-					//Case where use validates if a number is in a binary tree
+					//Case where use validates if a number is in a binary tree.
 					//Prompts user to input number and BSTOption searches for it using containsNode.
 					case 3:
 					System.out.println("Enter the value you would like to find in the tree.");
@@ -184,4 +187,5 @@ public void traverseInOrder(Node node) {
 				}
 				}
 			}
+}
 }
